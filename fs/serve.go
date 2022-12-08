@@ -411,8 +411,8 @@ func (s *Server) Serve(fs FS) error {
 	s.handle = append(s.handle, nil)
 
 	for {
-		chs := make([]chan error, 100)
-		for i := 0; i < 100; i++ {
+		chs := make([]chan error, 5)
+		for i := 0; i < 5; i++ {
 			chs[i] = make(chan error)
 			go func(ch chan error) error{
 
